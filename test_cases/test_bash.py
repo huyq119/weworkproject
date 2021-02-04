@@ -1,5 +1,6 @@
 from page.app import App
 
+
 # 封装app启动和退出
 
 class TestBase():
