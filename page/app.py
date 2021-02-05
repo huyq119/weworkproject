@@ -17,7 +17,8 @@ class App(BasePage):
                     'deviceName': yaml.safe_load(open("../page/configuration.yml"))["caps"]["deviceName"],
                     'appPackage': self._package, 'appActivity': self._activity,
                     'noReset': 'true', 'unicodeKeyBoard': 'true', 'resetKeyBoard': 'true',
-                    'ensureWebviewsHavePages': True}
+                    'ensureWebviewsHavePages': True,
+                    'setting[waitForIdleTimeout]': 0, }
             # 初始化driver
             self._driver = webdriver.Remote("http://localhost:4723/wd/hub", caps)
         else:

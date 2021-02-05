@@ -24,8 +24,9 @@ class Contacts(BasePage):
 
     def get_name_list(self):
         sleep(5)
-        element_list = self._driver.find_elements(MobileBy.XPATH, "//*[@resource-id='com.tencent.wework:id/em4']"
-                                                                  "//*[@class='android.widget.TextView']")
+        locator = (MobileBy.XPATH, "//*[@resource-id='com.tencent.wework:id/em4']"
+                                   "//*[@class='android.widget.TextView']")
+        element_list = WebDriverWait(self._driver, 10).until(expected_conditions.presence_of_all_elements_located(locator))
         name_list = []
         for element in element_list:
             name_list.append(element.text)
