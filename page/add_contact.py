@@ -15,7 +15,7 @@ class Add_Contact(BasePage):
         self.find(MobileBy.XPATH, "//*[@resource-id='com.tencent.wework:id/f5y']"
                                   "//*[@resource-id = 'com.tencent.wework:id/fuy']").send_keys(_phone)
         self.goto_set_gender().set_gender(_gender)
-        self.goto_set_department().set_department()
+        # self.goto_set_department().set_department()
         self.find(MobileBy.ID, "com.tencent.wework:id/ie7").click()
         return page.add_contact_option.Add_Contact_Option(self._driver)
 
@@ -25,14 +25,14 @@ class Add_Contact(BasePage):
         self.find(MobileBy.XPATH, "//*[@resource-id='com.tencent.wework:id/f5y']"
                                   "//*[@resource-id = 'com.tencent.wework:id/fuy']").send_keys(_phone)
         self.goto_set_gender().set_gender(_gender)
-        self.goto_set_department().set_department()
+        # self.goto_set_department().set_department()
         self.find(MobileBy.ID, "com.tencent.wework:id/ie7").click()
         return page.message_contact_fail.Message_Contact_Fail(self._driver)
 
-    def goto_set_department(self):
-        self.find(MobileBy.XPATH, "//*[@resource-id='com.tencent.wework:id/er0']"
-                                  "//*[@resource-id='com.tencent.wework:id/b81']").click()
-        return Set_Department(self._driver)
+    # def goto_set_department(self):
+    #     self.find(MobileBy.XPATH, "//*[@resource-id='com.tencent.wework:id/er0']"
+    #                               "//*[@resource-id='com.tencent.wework:id/b81']").click()
+    #     return Set_Department(self._driver)
 
     def goto_set_gender(self):
         self.find(MobileBy.XPATH, "//*[@resource-id='com.tencent.wework:id/b7a']/..//"
